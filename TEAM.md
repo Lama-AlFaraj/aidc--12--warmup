@@ -1,0 +1,1 @@
+- Shurooq Aljohani, I want to run a model on hardware I chose
