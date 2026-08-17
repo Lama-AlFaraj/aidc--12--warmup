@@ -1,0 +1,1 @@
+- Lama, I want to learn Git properly
