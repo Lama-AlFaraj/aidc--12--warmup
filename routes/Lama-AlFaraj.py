@@ -8,5 +8,5 @@ def handle():
     return {
         "name": "Lama AlFaraj",
         "team": "12",
-        "wants": "understand how production ML systems actually work",
+        "wants": "ship a working AI project by the end",
     }
