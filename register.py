@@ -10,9 +10,9 @@ import json, urllib.request, urllib.error
 
 BOARD = "https://aidc.nadir.sh/register"
 
-TEAMMATE = "their-github-username"   # whose endpoint you are reading
-ME       = "your-github-username"    # you, doing the registering
-TEAM     = "your-team"
+TEAMMATE = "Dema"   # whose endpoint you are reading
+ME       = "Lama-AlFaraj"    # you, doing the registering
+TEAM     = "12"
 
 def request(url, body=None):
     data = json.dumps(body).encode() if body else None
