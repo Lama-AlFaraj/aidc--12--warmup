@@ -3,8 +3,8 @@ import urllib.request
 
 TEAM = "12"
 BY = "Lama Turki AlFarraj"
-MODEL = "HuggingFaceTB/SmolLM2-135M-Instruct"  # عدّلي حسب الموديل اللي اخترتيه
-IMAGE = "ghcr.io/<owner>/<repo>:latest"  # عدّلي owner/repo بحروف صغيرة
+MODEL = "Qwen/Qwen3-0.6B"  
+IMAGE = "ghcr.io/lama-alfaraj/aidc--12--warmup:latest"  
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; team12-bot/1.0)",
