@@ -3,9 +3,9 @@
 Every file in routes/ that defines PATH and handle() becomes an endpoint.
 Add your own file. Do not edit this one.
 """
-
 import importlib.util, json, pathlib
 from http.server import BaseHTTPRequestHandler, HTTPServer
+
 
 def load_routes():
     routes = {}
@@ -19,11 +19,14 @@ def load_routes():
             routes[mod.PATH] = mod.handle
     return routes
 
+
 ROUTES = load_routes()
+
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         routes = ROUTES
+
         if self.path == "/":
             self.reply(200, {"endpoints": sorted(routes) + ["/"]})
         elif self.path in routes:
@@ -41,6 +44,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, fmt, *args):
         print("  %s" % (fmt % args))
+
 
 if __name__ == "__main__":
     print("listening on 0.0.0.0:8000")
