@@ -6,6 +6,7 @@ Add your own file. Do not edit this one.
 import importlib.util, json, pathlib
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+
 def load_routes():
     routes = {}
     for f in sorted(pathlib.Path(__file__).parent.glob("routes/*.py")):
@@ -18,9 +19,14 @@ def load_routes():
             routes[mod.PATH] = mod.handle
     return routes
 
+
+ROUTES = load_routes()
+
+
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        routes = load_routes()
+        routes = ROUTES
+
         if self.path == "/":
             self.reply(200, {"endpoints": sorted(routes) + ["/"]})
         elif self.path in routes:
@@ -38,6 +44,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, fmt, *args):
         print("  %s" % (fmt % args))
+
 
 if __name__ == "__main__":
     print("listening on 0.0.0.0:8000")
